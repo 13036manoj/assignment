@@ -14,6 +14,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web and AsyncStorage for react-native
 import { BrowserRouter } from "react-router-dom";
 import Main from "./main";
+import ProgressStatus from "./Progress";
 const persistConfig = {
   key: "root",
   storage
@@ -31,7 +32,14 @@ ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
-        <Main />
+        <div>
+          <div style={{ width: "100%", height: 64, marginTop: 32 }}>
+            <ProgressStatus />
+          </div>
+          <div style={{ marginTop: 32 }}>
+            <Main />
+          </div>
+        </div>
       </BrowserRouter>
     </PersistGate>
   </Provider>,

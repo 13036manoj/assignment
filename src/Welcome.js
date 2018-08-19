@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 import { connect } from "react-redux";
 const Option = Select.Option;
 
-class App1 extends Component {
+class Welcome extends Component {
   static getDerivedStateFromProps(props, state) {
     console.log("this.props.history", props.history);
     if (props.renderApp1) {
@@ -34,4 +34,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(App1);
+export default connect(mapStateToProps)(Welcome);
